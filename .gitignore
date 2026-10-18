@@ -1,0 +1,20 @@
+# Środowisko wirtualne Python
+.venv/
+venv/
+env/
+
+# Pliki kompilacji i cache Pythona
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pliki konfiguracyjne środowisk i edytorów
+.vscode/
+.idea/
+
+# Pliki systemowe
+.DS_Store
+Thumbs.db
+
+# Zmienne środowiskowe i klucze API
+.env
