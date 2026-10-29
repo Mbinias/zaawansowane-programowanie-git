@@ -1,40 +1,41 @@
 """2. Stworzyć następujące klasy:
-    - Library (klasa opisująca bibliotekę), posiadająca pola:
-        - city
-        - street
-        - zip_code
-        - open_hours (str)
-        - phone
-    - Employee (klasa opisująca pracownika biblioteki), posiadająca pola:
-        - first_name
-        - last_name
-        - hire_date
-        - birth_date
-        - city
-        - street
-        - zip_code
-        - phone
-    - Book (klasa opisująca książkę), posiadająca pola
-        - library
-        - publication_date
-        - author_name
-        - author_surname
-        - number_of_pages
-    - Order (klasa opisująca zamówienie), posiadająca pola:
-        - employee
-        - student
-        - books (lista obiektów klasy Book)
-        - order_date
-    
-    Dodatkowo:
-    
-    - Każda klasa ma mieć zaimplementowaną metodę `__str__`, która będzie opisywała obiekt oraz 
-    ewentualne obiekty znajdujące się w tym obiekcie (np. obiekt Library w obiekcie Book).
-    - Pola w klasie mają być zdefiniowane jako atrybuty ustawiane podczas tworzenia instancji klasy 
-    za pośrednictwem konstruktora.
-    - Stworzyć 2 biblioteki (2 instancje klasy), 5 książek, 3 pracowników, 3 studentów, oraz 2 
-    zamówienia.
-    - Wyświetlić oba zamówienia (`print`)"""
+- Library (klasa opisująca bibliotekę), posiadająca pola:
+    - city
+    - street
+    - zip_code
+    - open_hours (str)
+    - phone
+- Employee (klasa opisująca pracownika biblioteki), posiadająca pola:
+    - first_name
+    - last_name
+    - hire_date
+    - birth_date
+    - city
+    - street
+    - zip_code
+    - phone
+- Book (klasa opisująca książkę), posiadająca pola
+    - library
+    - publication_date
+    - author_name
+    - author_surname
+    - number_of_pages
+- Order (klasa opisująca zamówienie), posiadająca pola:
+    - employee
+    - student
+    - books (lista obiektów klasy Book)
+    - order_date
+
+Dodatkowo:
+
+- Każda klasa ma mieć zaimplementowaną metodę `__str__`, która będzie opisywała obiekt oraz
+ewentualne obiekty znajdujące się w tym obiekcie (np. obiekt Library w obiekcie Book).
+- Pola w klasie mają być zdefiniowane jako atrybuty ustawiane podczas tworzenia instancji klasy
+za pośrednictwem konstruktora.
+- Stworzyć 2 biblioteki (2 instancje klasy), 5 książek, 3 pracowników, 3 studentów, oraz 2
+zamówienia.
+- Wyświetlić oba zamówienia (`print`)"""
+
 
 class Student:
     def __init__(self, name, marks):
@@ -44,6 +45,7 @@ class Student:
     def is_passed(self):
         average = sum(self.marks) / len(self.marks)
         return average > 50
+
 
 class Library:
     def __init__(self, city, street, zip_code, open_hours, phone):
@@ -55,6 +57,7 @@ class Library:
 
     def __str__(self):
         return f"Library in {self.city}, {self.street}, {self.zip_code}, Open hours: {self.open_hours}, Phone: {self.phone}"
+
 
 class Employee:
     def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
@@ -70,6 +73,7 @@ class Employee:
     def __str__(self):
         return f"Employee: {self.first_name} {self.last_name}, Hired: {self.hire_date}, Born: {self.birth_date}, Address: {self.city}, {self.street}, {self.zip_code}, Phone: {self.phone}"
 
+
 class Book:
     def __init__(self, library, publication_date, author_name, author_surname, number_of_pages):
         self.library = library
@@ -81,6 +85,7 @@ class Book:
     def __str__(self):
         return f"Book by {self.author_name} {self.author_surname}, Published: {self.publication_date}, Pages: {self.number_of_pages}, Library: {self.library}"
 
+
 class Order:
     def __init__(self, employee, student, books, order_date):
         self.employee = employee
@@ -89,8 +94,9 @@ class Order:
         self.order_date = order_date
 
     def __str__(self):
-        books_str = ', '.join(str(book) for book in self.books)
+        books_str = ", ".join(str(book) for book in self.books)
         return f"Order by {self.student.name}, Processed by: {self.employee.first_name} {self.employee.last_name}, Books: [{books_str}], Order Date: {self.order_date}"
+
 
 lib1 = Library("Warszawa", "Marszałkowska", "00-001", "08:00-20:00", "111-222-333")
 lib2 = Library("Kraków", "Floriańska", "30-001", "09:00-18:00", "444-555-666")
