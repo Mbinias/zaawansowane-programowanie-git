@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 modyfikacja z gałęźi test
+=======
+zmiana pliku
+>>>>>>> b4690fe (Zmiana w pliku test.txt na gałęzi test_2)
