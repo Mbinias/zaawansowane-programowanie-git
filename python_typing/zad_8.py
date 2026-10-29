@@ -23,7 +23,11 @@ class Brewery:
         self.website_url = website_url
 
     def __str__(self) -> str:
-        return f"Brewery ID: {self.id}, Name: {self.name}, Type: {self.brewery_type}, Address: {self.street}, {self.city}, {self.state}, {self.postal_code}, {self.country}, Phone: {self.phone}, Website: {self.website_url}"
+        return (
+            f"Brewery ID: {self.id}, Name: {self.name}, Type: {self.brewery_type}, "
+            f"Address: {self.street}, {self.city}, {self.state}, {self.postal_code}, "
+            f"{self.country}, Phone: {self.phone}, Website: {self.website_url}"
+        )
 
 
 def fetch_breweries(city: str = None) -> list:
